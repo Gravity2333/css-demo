@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMO 属性选择器</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        /* 属性选择器 存在title属性 */
+        [title] {
+            font-size: bold;
+        }
+
+        /* 属性选择器，title属性 = NAV_NEWS */
+        [title=NAV_NEWS] {
+            color: orange;
+        }
+
+        /* 属性选择器 title以NAV开头 */
+        [title ^=NAV] {
+            background-color: lightgray;
+        }
+
+        /* 属性选择器 title以ABOUT结尾 */
+        [title $=ABOUT] {
+            color: white;
+        }
+
+        /* 属性选择器 title包含HOM */
+        [title *=HOM] {
+            color: greenyellow;
+        }
+
+        /* 属性选择器 包含title属性的h1元素 */
+        h1[title] {
+            background-color: gray;
+            color: white;
+        }
+
+        article::before{
+            content: "\"";
+        }
+
+        article::after{
+            content: "\"";
+        }
+
+        article::selection{
+            background-color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#1" title="NAV_HOME">HOME</a>
+            <a href="#3" title="NAV_NEWS">NEWS</a>
+            <a href="#2" title="NAV_ABOUT">ABOUT</a>
+        </nav>
+    </header>
+    <div>
+        <h1 title="infos from CNN NEWS">Trump is playing to more than one jury</h1>
+
+        <article>
+            While Trump’s destiny in the New York case will be decided according to the evidence by 12 of his peers, he
+            is
+            playing to a much wider jury — the general electorate ahead of his clash with President Joe Biden in
+            November.
+            Millions of Trump voters have long been skeptical of efforts to call him to account for his personal,
+            business
+            and political behavior and are a receptive audience to his false claims he’s a political dissident being
+            persecuted as part of a Biden plot. Trump is also using his on-camera appearances to boost his campaign
+            finance
+            operation. He has already raised $5.6 million online during the first week of his criminal trial, a source
+            familiar with the figure told CNN on Wednesday.
+        </article>
+
+    </div>
+</body>
+
+</html>
