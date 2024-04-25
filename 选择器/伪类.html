@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类DEMO</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        a {
+            display: block;
+        }
+
+        /* 选中所有子元素 */
+        .container>* {
+            border: 1px solid black;
+            height: 32px;
+            text-align: center;
+            background-color: lightgray;
+        }
+
+        /* 选中所有偶数元素 */
+        .container>*:nth-child(2n)::before {
+            content: '(偶数元素)';
+            color: white
+        }
+
+        /* 选中每种类型偶数元素 */
+        .container>*:nth-of-type(2n)::after {
+            content: '(当前类型偶数元素)';
+            color: white
+        }
+
+        /* 选中每种类型奇数元素 */
+        .container>*:nth-of-type(2n+1)::after {
+            content: '(当前类型奇数元素)';
+            color: orange
+        }
+
+        /* 选中所有奇数元素 */
+        .container>*:nth-child(2n+1)::before {
+            content: '(奇数元素)';
+            color: orange
+        }
+
+        /* 选中所有子元素 */
+        .container>*:nth-child(n) {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* 选中第一个元素 */
+        .container>*:first-child::before {
+            content: '(container第一个元素)';
+        }
+
+        /* 选中最后一个元素 */
+        .container>*:last-child::after {
+            content: '(container最后一个元素)'
+        }
+
+        /* 选中每种类型的第一个元素 */
+        .container>*:first-of-type {
+            background-color: greenyellow;
+        }
+
+        /* 选中每种类型的最后元素 */
+        .container>*:last-of-type {
+            background-color: lightblue
+        }
+
+        /* 选中每种类型的第2个元素 */
+        .container>*:nth-of-type(2) {
+            background-color: lightpink
+        }
+
+        /** 选中每种类型第一个元素 */
+        .container>*:first-of-type {
+            margin-top: 30px;
+        }
+
+
+        .container2 {
+            margin-top: 32px;
+            background-color: lightgray;
+            min-height: 32px;
+        }
+
+        .container2:empty::after {
+            content: '当前container为空'
+        }
+
+        .container3 {
+            margin-top: 32px;
+            background-color: lightgray;
+            min-height: 32px;
+        }
+
+        /* 找到contianer3仅有的一个子元素 */
+        .container3>div:only-child::after {
+            content: '仅有的一个元素'
+        }
+
+        /** 找到container3每个类型的唯一元素 */
+        .container3>div:only-of-type::before {
+            content: '仅有的一个元素'
+        }
+        
+        /* 除了a元素以外的contianer子元素都可以hover */
+        .container>*:not(a):hover{
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>P elem 1</p>
+        <p>P elem 2</p>
+        <p>P elem 3</p>
+        <p>P elem 4</p>
+        <p>P elem 5</p>
+        <p>P elem 6</p>
+        <a>a elem 1</a>
+        <a>a elem 2</a>
+        <a>a elem 3</a>
+        <a>a elem 4</a>
+        <a>a elem 5</a>
+        <a>a elem 6</a>
+        <div>div elem 1</div>
+        <div>div elem 2</div>
+        <div>div elem 3</div>
+        <div>div elem 4</div>
+        <div>div elem 5</div>
+        <div>div elem 6</div>
+    </div>
+
+    <div class="container2"></div>
+    <div class="container3">
+        <div> div 1 </div>
+    </div>
+</body>
+
+</html>
