@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMO伪元素</title>
+    <style>
+        article {
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        article::before {
+            content: "";
+            padding-left: 2em;
+        }
+
+        article::first-letter {
+            font-size: 20px;
+        }
+
+        article::selection {
+            background-color: gray;
+            color: white;
+        }
+
+        h2::before {
+            content: "\"";
+        }
+
+        h2::after {
+            content: "\"";
+        }
+
+        .log {
+            font-size: 20px;
+        }
+
+        .log::after {
+            content: '2';
+            font-size: 10px;
+            vertical-align: bottom;
+        }
+
+        .log::after::after {
+            content: '2';
+            font-size: 10px;
+            vertical-align: bottom;
+        }
+
+        .double::after{
+            content: "2";
+            font-size: 10px;
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        The double court date will represent yet another unfathomable twist in the saga of the presumptive Republican
+        nominee who is again stretching America’s judicial and constitutional systems to their limits as he runs to
+        reclaim the White House.
+    </article>
+    <article>
+        Trump has left no doubt he’d much rather be on the grander stage in Washington, watching Supreme Court justices
+        — three of whom he appointed — debate his claim that, as an ex-president, he cannot be prosecuted for any
+        actions that he took in office. Trump the showman would surely relish holding a photo-op on the court steps
+        below an ornate marble facade that reads “Equal Justice Under Law.” It would be a far more colorful spectacle
+        for a presidential campaign that has morphed with his legal defenses than the increasingly repetitive press
+        gaggles he holds in the dingy corridor outside the Manhattan courtroom hearing his first criminal trial. But
+        Trump has no choice but to listen to more testimony in New York from former tabloid publisher David Pecker, a
+        key witness for prosecutors who allege the ex-president tried to mislead 2016 general election voters by
+        covering up an affair that he denies.
+    </article>
+    <article>
+        Trump blames Judge Juan Merchan for dashing his hopes of being at the Supreme Court Thursday. The New York judge
+        reminded Trump’s attorney that their client is a criminal defendant and must therefore attend his trial,
+        prompting the ex-president to immediately weaponize his ruling for his political persecution narrative. In an
+        interview with Fox News Digital, Trump accused Merchan of considering himself “above the Supreme Court” in
+        preventing him from going to hear “some of the great legal scholars” argue his case.
+    </article>
+    <h2>Trump is playing to more than one jury</h2>
+    <article>
+        While Trump’s destiny in the New York case will be decided according to the evidence by 12 of his peers, he is
+        playing to a much wider jury — the general electorate ahead of his clash with President Joe Biden in November.
+        Millions of Trump voters have long been skeptical of efforts to call him to account for his personal, business
+        and political behavior and are a receptive audience to his false claims he’s a political dissident being
+        persecuted as part of a Biden plot. Trump is also using his on-camera appearances to boost his campaign finance
+        operation. He has already raised $5.6 million online during the first week of his criminal trial, a source
+        familiar with the figure told CNN on Wednesday.
+    </article>
+
+    <span class="log">log</span><span>N</span>
+    <div></div>
+    <span class="double">X</span>
+</body>
+
+</html>
