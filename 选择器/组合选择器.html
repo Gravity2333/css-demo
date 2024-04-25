@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 覆盖浏览器默认样式 */
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        header {
+            background-color: lightseagreen;
+        }
+
+        a {
+            color: red;
+        }
+
+        .content{
+            padding: 10px;
+        }
+
+        .artical-color {
+            color: gray;
+        }
+
+        .artical-bold {
+            font-weight: bold;
+        }
+
+        /** 交集选择器 */
+        .artical-color.artical-bold {
+            border: 1px solid skyblue;
+        }
+
+        /** 并集选择器 */
+        .artical-bold,
+        .artical-color {
+            background-color: lightgray;
+        }
+
+        .demo-table{
+            margin: 10px 0px;
+            background-color: lightgray;
+        }
+
+        /** 后代选择器 */
+        .demo-table li{
+            color: rgb(0, 106, 255);
+        }
+
+        /** 父子选择器 */
+        ul>li{
+            padding-left: 10px;
+        }
+
+        /** id选择器 */
+        #first_li{
+            color: red;
+        }
+
+        /** 下一个兄弟选择器 + */
+        #first_li+li{
+            color: greenyellow;
+        }
+
+        /** 所有兄弟选择器 */
+        #first_li+li~li:hover{
+            font-size: 30px;
+            color: yellow;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#1">HOME</a>
+            <a href="#2">NEWS</a>
+            <a href="#3">ABOUT</a>
+        </nav>
+    </header>
+    <div class="content">
+        <article class="artical-color artical-bold">
+            Russia on Wednesday vetoed a United Nations resolution that proposed a ban on the use of nuclear weapons in
+            outer space amid US intelligence-backed concerns that Moscow is trying to develop a nuclear device capable
+            of
+            destroying satellites.
+
+            Russian Ambassador Vassily Nebenzia described the UN draft as a “dirty spectacle” and a “cynical ploy”
+            prepared
+            by the resolution’s backers, the US and Japan.
+
+            In February, President Joe Biden confirmed the US has intelligence that Russia is developing a nuclear
+            anti-satellite capability. Three sources familiar with the intelligence subsequently told CNN the weapon
+            could
+            destroy satellites by creating a massive energy wave when detonated.
+        </article>
+        <br />
+        <article class="artical-color">
+            The double court date will represent yet another unfathomable twist in the saga of the presumptive
+            Republican
+            nominee who is again stretching America’s judicial and constitutional systems to their limits as he runs to
+            reclaim the White House.
+
+            Trump has left no doubt he’d much rather be on the grander stage in Washington, watching Supreme Court
+            justices
+            — three of whom he appointed — debate his claim that, as an ex-president, he cannot be prosecuted for any
+            actions that he took in office. Trump the showman would surely relish holding a photo-op on the court steps
+            below an ornate marble facade that reads “Equal Justice Under Law.” It would be a far more colorful
+            spectacle
+            for a presidential campaign that has morphed with his legal defenses than the increasingly repetitive press
+            gaggles he holds in the dingy corridor outside the Manhattan courtroom hearing his first criminal trial. But
+            Trump has no choice but to listen to more testimony in New York from former tabloid publisher David Pecker,
+            a
+            key witness for prosecutors who allege the ex-president tried to mislead 2016 general election voters by
+            covering up an affair that he denies.
+
+            Trump blames Judge Juan Merchan for dashing his hopes of being at the Supreme Court Thursday. The New York
+            judge
+            reminded Trump’s attorney that their client is a criminal defendant and must therefore attend his trial,
+            prompting the ex-president to immediately weaponize his ruling for his political persecution narrative. In
+            an
+            interview with Fox News Digital, Trump accused Merchan of considering himself “above the Supreme Court” in
+            preventing him from going to hear “some of the great legal scholars” argue his case.
+        </article>
+        <section class="demo-table">
+            <h2>infos list</h2>
+            <ul>
+                <li id="first_li">infos1: xxxxxxxxxxxxxxxxx</li>
+                <li>infos2: xxxxxxxxxxxxxxxxx</li>
+                <li>infos3: xxxxxxxxxxxxxxxxx</li>
+                <li>infos4: xxxxxxxxxxxxxxxxx</li>
+                <li>infos5: xxxxxxxxxxxxxxxxx</li>
+            </ul>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
