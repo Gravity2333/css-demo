@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        .container {
+            width: 800px;
+            height: 600px;
+            border: 1px solid black;
+            background-color: lightblue;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        .container div {
+            width: 200px;
+            height: 200px;
+            box-sizing: border-box;
+            border: 1px solid black;
+        }
+
+        .container div:nth-child(1) {
+            height: 200px;
+            background-color: lightgreen;
+        }
+
+        .container div:nth-child(2) {
+            height: 400px;
+            background-color: lightpink;
+        }
+
+        .container div:nth-child(3) {
+            height: 300px;
+            background-color: lightyellow;
+        }
+
+        .box1 {
+            align-items: flex-start;
+        }
+
+        .box2{
+            align-items: flex-end;
+        }
+
+        .box3{
+            align-items:  center
+        }
+
+        .box4{
+            align-items:  baseline
+        }
+
+        .box5{
+            align-items:  baseline
+        }
+
+        .box6{
+            align-items:  baseline
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>aligb-items: flex-start</h3>
+        <div class="container box1">
+            <div>item1</div>
+            <div>item2</div>
+            <div>item3</div>
+        </div>
+    </div>
+
+    <div>
+        <h3>align-items:  flex-end </h3>
+        <div class="container box2">
+            <div>item1</div>
+            <div>item2</div>
+            <div>item3</div>
+        </div>
+    </div>
+
+    <div>
+        <h3>justify-content: center</h3>
+        <div class="container box3">
+            <div>item1</div>
+            <div>item2</div>
+            <div>item3</div>
+        </div>
+    </div>
+
+    <div>
+        <h3>align-items:  baseline line-height一样的情况下</h3>
+        <div class="container box5">
+            <div>item1</div>
+            <div>item2</div>
+            <div>item3</div>
+        </div>
+    </div>
+
+    <div>
+        <h3>align-items:  baseline line-height不一样的情况下</h3>
+        <div class="container box5">
+            <div style="line-height: 30px;">item1</div>
+            <div style="line-height: 50px;">item2</div>
+            <div style="line-height: 150px;">item3</div>
+        </div>
+    </div>
+
+    <div>
+        <h3>align-items:  baseline font-size不一样的情况</h3>
+        <div class="container box6">
+            <div style="font-size: 20px;">item1</div>
+            <div style="font-size: 40px;">item2</div>
+            <div style="font-size: 60px;white-space: wrap;">item哈哈哈哈哈</div>
+        </div>
+    </div>
+
+    <div>
+        <h3>align-items:  baseline 存在空元素的情况</h3>
+        <div class="container box6">
+            <div style="font-size: 20px;">item1</div>
+            <div style="font-size: 30px;">item2</div>
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>

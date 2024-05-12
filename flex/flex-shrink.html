@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        .container {
+            width: 500px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: lightblue;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+        }
+
+        .container div {
+            width: 200px;
+            height: 200px;
+            box-sizing: border-box;
+            border: 1px solid black;
+        }
+
+        .container div:nth-child(1) {
+            background-color: lightgreen;
+        }
+
+        .container div:nth-child(2) {
+            background-color: lightpink;
+        }
+
+        .container div:nth-child(3) {
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>小于容器宽度 flex-shrink不生效</h3>
+        <div class="container box1">
+            <div style="width: 20%;">item1 20%</div>
+            <div style="width: 10%;">item2 10%</div>
+            <div style="width: 20%;flex-shrink: 1;">item3 20% flex-shrink: 1 不生效</div>
+        </div>
+    </div>
+
+    <div>
+        <h3>超出长度，不设置flex-shrink 默认为1</h3>
+        <div class="container box2">
+            <div>item1 flex-shrink: 1 (默认)</div>
+            <div>item2 flex-shrink: 1 (默认)</div>
+            <div>item3 flex-shrink: 1 (默认)</div>
+        </div>
+    </div>
+
+    <div>
+        <h3>flex-shrink 设置0  不收缩</h3>
+        <div class="container box3">
+            <div style="flex-shrink: 0;">item1 flex-shrink: 0</div>
+            <div style="flex-shrink: 0;">item2 flex-shrink: 0</div>
+            <div style="flex-shrink: 0;">item3 flex-shrink: 0</div>
+        </div> 
+    </div>
+
+    <div>
+        <h3>flex-shink大于1 按照比例收缩</h3>
+        <div class="container box3">
+            <div style="flex-shrink: 1;">item1 flex-shrink: 1 收缩长度为: 超出长度*1/4</div>
+            <div style="flex-shrink: 2;">item2 flex-shrink: 2 收缩长度为: 超出长度*2/4</div>
+            <div style="flex-shrink: 1;">item3 flex-shrink: 1 收缩长度为: 超出长度*1/4</div>
+        </div> 
+    </div>
+
+    <div>
+        <h3>flex-shink小于1 直接用超出长度*flex-shrink值 可能依旧超出</h3>
+        <div class="container box3">
+            <div style="flex-shrink: 0.1;">item1 flex-shrink: 0.1 收缩长度为: 超出长度*0.1</div>
+            <div style="flex-shrink: 0.2;">item2 flex-shrink: 0.2 收缩长度为: 超出长度*0.2</div>
+            <div style="flex-shrink: 0.1;">item3 flex-shrink: 0.1 收缩长度为: 超出长度*0.1</div>
+        </div> 
+        <span>还超出 超出长度*0.6</span>
+    </div>
+
+    <div>
+        <h3>文字超出 显示...  nowrap的情况下</h3>
+        <div class="container box3">
+            <div style="flex-shrink: 1;">item1 flex-shrink: 1 收缩长度为: 超出长度*1/4</div>
+            <div style="flex-shrink: 2; white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">item2 flex-shrink: 2 收缩长度为: 超出长度*2/4</div>
+            <div style="flex-shrink: 1;">item3 flex-shrink: 1 收缩长度为: 超出长度*1/4</div>
+        </div> 
+    </div>
+</body>
+
+</html>
