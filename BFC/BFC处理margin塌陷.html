@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFC处理margin合并</title>
+    <style>
+        .main {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+        }
+
+        .container {
+            width: 600px;
+            height: 600px;
+            box-sizing: border-box;
+            background-color: lightgreen;
+        }
+
+        .box{
+            width: 200px;
+            height: 200px;
+            box-sizing: border-box;
+            border: 1px solid black;
+            margin-top: 40px;
+        }
+
+        .box:first-child{
+            background-color: lightpink;
+        }
+
+        .box:last-child{
+            background-color: lightskyblue;
+        }
+
+        .bfc{
+            display: flow-root;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div>
+            <h3> margin塌陷情况 未开启BFC</h3>
+            <div class="container">
+                <div class="box"></div>
+            </div>
+        </div>
+        <div>
+            <h3> 给container设置为BFC 解决塌陷问题</h3>
+            <div class="container bfc">
+                <div class="box"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

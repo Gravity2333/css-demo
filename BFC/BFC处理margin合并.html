@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFC处理margin合并</title>
+    <style>
+        .main {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+        }
+
+        .container {
+            width: 600px;
+            height: 600px;
+            box-sizing: border-box;
+            background-color: lightgreen;
+            border: 1px solid black;
+        }
+
+        .box{
+            width: 200px;
+            height: 200px;
+            box-sizing: border-box;
+            border: 1px solid black;
+            margin: 40px 0px;
+        }
+
+        .box:first-child{
+            background-color: lightpink;
+        }
+
+        .box:last-child{
+            background-color: lightskyblue;
+        }
+
+        .bfc_container{
+            display: flow-root;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div>
+            <h3> margin合并情况 未开启BFC</h3>
+            <div class="container">
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+        <div>
+            <h3> 给第一个box包裹一个BFC元素 解决合并</h3>
+            <div class="container">
+                <div class="bfc_container">
+                    <div class="box"></div>
+                </div>
+                <div class="box"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
