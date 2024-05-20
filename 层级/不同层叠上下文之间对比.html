@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .stack-context-1{
+            width: 200px;
+            height: 200px;
+            background-color: lightcoral;
+            position: relative;
+            z-index: 1
+        }
+
+        .stack-context-1 .child{
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+            position: absolute;
+            bottom: -40px;
+            left: 50px;
+            z-index: 999;
+        }
+
+        .stack-context-2{
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stack-context-2 .child{
+            width: 100px;
+            height: 100px;
+            background-color: lightpink;
+            position: absolute;
+            top: -40px;
+            left: 50px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="stack-context-1">
+        <div class="child"></div>
+    </div>
+    <div class="stack-context-2">
+        <div class="child"></div>
+    </div>
+</body>
+</html>

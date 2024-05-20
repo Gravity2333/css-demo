@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .float {
+            width: 200px;
+            height: 200px;
+            background-color: lightcyan;
+            float: left;
+        }
+
+        .relative {
+            width: 500px;
+            height: 200px;
+            background-color: lightgreen;
+            position: relative;
+            top: 100px;
+            z-index: -22;
+        }
+
+        .child {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            background-color: red;
+            z-index: 20;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="relative">
+        <!-- <div class="child"></div> -->
+    </div>
+    <div class="float"></div>
+
+</body>
+
+</html>
