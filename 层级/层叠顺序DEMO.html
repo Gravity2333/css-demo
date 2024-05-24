@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .stacking-context{
+            width: 800px;
+            height: 800px;
+            background-color: lightgoldenrodyellow;
+            position: relative;
+            z-index: 0;
+
+            overflow: hidden;
+        }
+
+        .minus-zindex{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: lightgreen;
+            top: 50px;
+            left: 50px;
+            z-index: -1;
+        }
+
+        .block{
+            width: 200px;
+            height: 200px;
+            background-color: lightcoral;
+            margin-left: 100px;
+            margin-top: 100px;
+        }
+
+        .float{
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            float: left;
+            margin-top: -150px;
+            margin-left: 150px;
+
+            white-space: pre;
+        }
+
+        .opacity{
+            width: 200px;
+            height: 200px;
+            background-color: lightpink;
+            opacity: 0.5;
+            margin-left: 200px;
+        }
+
+        .zindex{
+            width: 300px;
+            height: 200px;
+            background-color: lightseagreen;
+            position: absolute;
+            top: 500px;
+            left: 250px;
+        }
+
+        .level0{
+            z-index: 0;
+        }
+
+        .level2{
+            background-color: lightgrey;
+            top: 550px;
+            left: 300px;
+            z-index: 2;
+        }
+
+        .level1{
+            background-color: aqua;
+            top: 600px;
+            left: 350px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="stacking-context">层叠上下文
+        <div class="minus-zindex">负ZIndex</div>
+        <div class="block">块元素 块元素块元素块元素块元素块元素块元素块元素块元素ss</div>
+        <div class="float">   浮动元素</div>
+        <div class="opacity">z-index为0/auto 或 不依赖zindex的层叠上下文</div>
+        <div class="zindex level0"> zindex  =  0 </div>
+        <div class="zindex level2"> zindex  =  0 </div>
+        <div class="zindex level1"> zindex  =  0 </div>
+    </div>
+</body>
+</html>

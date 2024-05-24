@@ -1,0 +1,27 @@
+.ellipsis(@fontSize: 16px) {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: @fontSize;
+    width: 800px;
+}
+
+.container {
+    width: 800px;
+    background-color: lightcoral;
+
+    .item {
+        width: 100%;
+    }
+
+    .item:nth-child(1) {
+        background-color: aqua;
+        width: .ellipsis()[width]/2;
+        .ellipsis(32px)
+    }
+
+    .item:nth-child(2) {
+        background-color: rgb(0, 255, 42);
+        .ellipsis(20px)
+    }
+}

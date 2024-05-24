@@ -1,0 +1,32 @@
+@import url('./mixins/index.less');
+
+.container {
+    width: 800px;
+    background-color: yellow;
+
+    .item {
+        width: 200px;
+        height: 200px;
+        box-sizing: border-box;
+        border: 1px solid black;
+    }
+
+    .item:nth-child(1) {
+        background-color: rgb(21, 255, 0);
+        float: left;
+    }
+
+    .item:nth-child(2) {
+        background-color: rgb(0, 85, 255);
+        float: left;
+    }
+
+    .item:nth-child(3) {
+        background-color: rgb(255, 0, 212);
+        float: right;
+    }
+
+    &::after{
+        .clearfix()
+    }
+}
