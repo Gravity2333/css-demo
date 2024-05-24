@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .float {
+            width: 200px;
+            height: 200px;
+            background-color: lightcoral;
+            float: left;
+        }
+
+        .clear {
+            content: '';
+            /* clear必须在块元素才生效 */
+            display: block;
+            clear: both;
+        }
+
+        .container {
+            background-color: lightgray;
+        }
+
+        .container::after {
+            content: '';
+            /* clear必须在块元素才生效 */
+            display: block;
+            clear: both;
+        }
+    </style>
+    <div class="container">
+        <div class="float"></div>
+        <div class="clear"></div>
+        <div>ssss</div>
+    </div>
+</body>
+
+</html>
